@@ -2,6 +2,7 @@ const baseUrl = 'https://jsonplaceholder.typicode.com';
 const loadingUsersDOM = document.querySelector('.loading-users');
 const loadingPostsDOM = document.querySelector('.loading-posts');
 const usersDOM = document.querySelector('.users');
+const authorDOM = document.querySelector('.posts-author');
 const postsDOM = document.querySelector('.posts');
 
 const getAndShowUsers = async () => {
@@ -10,8 +11,8 @@ const getAndShowUsers = async () => {
     const { data } = await axios.get(`${baseUrl}/users`);
     const usersElements = data
       .map((user) => {
-        const { name, username, id } = user;
-        return `<tr onClick="getAndShowPosts(${id})"><td>${name}</td></tr>`;
+        const { name, id } = user;
+        return `<tr onClick="getAndShowPosts(${id}, '${name}')"><td>${name}</td></tr>`;
       })
       .join('');
     usersDOM.innerHTML = `<th>Authors</th>${usersElements}`;
@@ -24,9 +25,9 @@ const getAndShowUsers = async () => {
 
 getAndShowUsers();
 
-const getAndShowPosts = async (id) => {
+const getAndShowPosts = async (id, name) => {
   loadingPostsDOM.style.visibility = 'visible';
-  console.log(id);
+  authorDOM.innerHTML = `Posts by ${name}`;
   try {
     const { data } = await axios(`${baseUrl}/users/${id}/posts`);
     const postsElements = data

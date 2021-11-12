@@ -93,9 +93,13 @@ tr:nth-child(odd) td:hover {
   visibility: hidden;
 }
 
-.posts {
+.posts-section {
   max-width: 600px;
   margin: auto;
+}
+
+.posts-author {
+  text-align: center;
 }
 
 .post {
