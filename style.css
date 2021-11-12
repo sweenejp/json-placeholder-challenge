@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+:root {
+  --color1: #592941;
+  --color2: #814262;
+  --color3: #a76385;
+  --color4: #52b788;
+  --color5: #b2d3a8;
+}
+
+html {
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  width: 80%;
+  margin: auto;
+}
+
+header {
+  text-align: center;
+}
+
+table {
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+  margin: auto;
+}
+
+td,
+th {
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+td {
+  width: 600px;
+}
+
+th {
+  background-color: var(--color1);
+  color: white;
+  font-size: 2rem;
+}
+
+tr:nth-child(even) td {
+  background-color: var(--color4);
+}
+
+tr:nth-child(odd) td {
+  background-color: var(--color5);
+}
+
+tr:nth-child(even) td:hover {
+  background-color: var(--color2);
+  color: white;
+  font-weight: 700;
+}
+tr:nth-child(odd) td:hover {
+  background-color: var(--color3);
+  color: white;
+  font-weight: 700;
+}
+
+.loading-posts {
+  visibility: hidden;
+}
+
+.posts {
+  max-width: 600px;
+  margin: auto;
+}
+
+.post {
+  background-color: var(--color5);
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.post-title {
+  text-align: center;
+}
